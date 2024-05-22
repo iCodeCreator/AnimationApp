@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vfX-Sr-Bka">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="oHy-IT-dke">
+            <objects>
+                <viewController id="vfX-Sr-Bka" customClass="ViewController" customModule="AnimationApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Iu5-gT-atz">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xW-Ly-ex3" customClass="SpringView" customModule="SpringAnimation">
+                                <rect key="frame" x="59" y="99.000000000000014" width="275" height="153.33333333333337"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="19"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVa-92-eXc" customClass="SpringButton" customModule="SpringAnimation">
+                                <rect key="frame" x="59" y="739" width="275" height="39"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="Run">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="runAnimationButtonPressed:" destination="vfX-Sr-Bka" eventType="touchUpInside" id="la8-dB-FBY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animation data" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xak-sf-eqa" customClass="SpringLabel" customModule="SpringAnimation">
+                                <rect key="frame" x="59" y="349.33333333333331" width="275" height="153.33333333333331"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Xx-gu-RhS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xak-sf-eqa" firstAttribute="centerY" secondItem="Iu5-gT-atz" secondAttribute="centerY" id="26v-H3-6Te"/>
+                            <constraint firstItem="1xW-Ly-ex3" firstAttribute="width" secondItem="Iu5-gT-atz" secondAttribute="width" multiplier="0.7" id="8qp-PC-Elo"/>
+                            <constraint firstItem="OVa-92-eXc" firstAttribute="centerX" secondItem="6Xx-gu-RhS" secondAttribute="centerX" id="Add-Hc-W0l"/>
+                            <constraint firstItem="xak-sf-eqa" firstAttribute="width" secondItem="1xW-Ly-ex3" secondAttribute="width" id="AeU-j9-jF6"/>
+                            <constraint firstItem="1xW-Ly-ex3" firstAttribute="centerX" secondItem="6Xx-gu-RhS" secondAttribute="centerX" id="HhA-r7-bWi"/>
+                            <constraint firstItem="xak-sf-eqa" firstAttribute="height" secondItem="1xW-Ly-ex3" secondAttribute="height" id="XTo-lH-jl2"/>
+                            <constraint firstItem="1xW-Ly-ex3" firstAttribute="height" secondItem="Iu5-gT-atz" secondAttribute="height" multiplier="0.18" id="Xr6-Oh-TnD"/>
+                            <constraint firstItem="1xW-Ly-ex3" firstAttribute="top" secondItem="6Xx-gu-RhS" secondAttribute="top" constant="40" id="b7r-WP-ery"/>
+                            <constraint firstItem="xak-sf-eqa" firstAttribute="centerX" secondItem="Iu5-gT-atz" secondAttribute="centerX" id="bLA-jA-UJa"/>
+                            <constraint firstItem="OVa-92-eXc" firstAttribute="width" secondItem="1xW-Ly-ex3" secondAttribute="width" id="cvg-EZ-NEY"/>
+                            <constraint firstItem="6Xx-gu-RhS" firstAttribute="bottom" secondItem="OVa-92-eXc" secondAttribute="bottom" constant="40" id="wir-kd-0WF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="animationSpringLabel" destination="xak-sf-eqa" id="oht-um-c8U"/>
+                        <outlet property="animationSpringView" destination="1xW-Ly-ex3" id="jte-aT-5VT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yAr-UF-EUu" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-390" y="-124"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
